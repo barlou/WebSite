@@ -1,0 +1,258 @@
+{% load static %}
+
+{% load leaflet_tags %}
+
+{% leaflet_css %}
+{% leaflet_js %}
+
+    <!-- Chargement de la bibliothèque OpenStreetMap -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Carte </title>
+    <link rel="stylesheet" href="{% static 'css/style_map.css' %}">
+</head>
+
+{% include "location_site/templates/sites/navbar.html" %}
+
+<body class="pages">
+
+
+
+    <!-- Définition de la div qui contiendra la carte -->
+    <div class="map" id='map'></div>
+
+    <fieldset class="legend">
+        <legend class="title">Légende</legend>
+        <ul class="legende">
+          <li>
+            <span class="color-square" style="background-color: red;"></span>
+            Maison
+          </li>
+          <li>
+            <span class="color-square" style="background-color: blue;"></span>
+            Stations thermales / Cures thermales
+          </li>
+
+          <li>
+            <span class="color-square" style="background-color: yellow;"></span>
+            Restaurants
+          </li>
+
+          <li>
+            <span class="color-square" style="background-color: green;"></span>
+            Casino
+          </li>
+
+          <li>
+            <span class="color-square" style="background-color: brown;"></span>
+            Supermarchés
+          </li>
+
+          <li>
+            <span class="color-square" style="background-color: purple;"></span>
+            Activités
+          </li>
+
+          <li>
+            <span class="color-square" style="background-color: white;"></span>
+            Stations de ski
+          </li>
+        </ul>
+      </fieldset>
+      <!--
+      <div class="markers-list">
+        <ul id="marker-list">
+            <li class="marker" id="marker-1">Maison</li>
+            <li class="marker" id="marker-2"><a href="#" data-coordinate="coordinateCure" data-color="blue">Stations thermales</a></li>
+            <li class="marker" id="marker-3"><a href="#" data-coordinate="coordinateRestaurent" data-color="yellow">Restaurants</a></li>
+            <li class="marker" id="marker-3"><a href="#" data-coordinate="coordinateCasino" data-color="green">Casino</a></li>
+            <li class="marker" id="marker-3"><a href="#" data-coordinate="coordinateSupermarche" data-color="brown">Supermarché</a></li>
+            <li class="marker" id="marker-3"><a href="#" data-coordinate="coordinateActivite" data-color="purple">Activités</a></li>
+            <li class="marker" id="marker-3"><a href="#" data-coordinate="coordinateSki" data-color="white">Stations de ski</a></li>
+        </ul>
+      </div>
+    -->
+    </div>
+
+
+
+    <!-- Création de la carte en JavaScript -->
+    <script>
+
+        // mises en place des marqueurs
+        const coordinateCure = [[1.8392714672747932, 42.72132425619023], // les bains de Couloubret 
+        [1.839454464256528, 42.72055067584369], // Etablissement thermales
+        [1.8384675381515296, 42.71859067543879], // Thermes du Teich 
+        [1.839692008216526, 42.71980301435331], // Bassin des ladres 
+        [1.837275380050441, 42.719510856222584] // Sources chaudes 
+        ]; 
+
+        const coordinateRestaurent = [[1.8384281150050716, 42.720082685616], // La petite fringale 
+        [1.8389451120347091, 42.72017534054251], // Couteaux fourchettes 
+        [1.8379824888911194, 42.71988430184014], // L'aparté 
+        [1.838005373377577, 42.719946721865526], // Le comptoir des négociants 
+        [1.8393089376493503, 42.72004128818725], // Au canon
+        [1.8385525778778484, 42.72101476279948], // Casa Mauricio
+        [1.8381823932494616, 42.71965507617351], // Crêperie l'oiseau bleu 
+        [1.8384506294330296, 42.72023047791366], // La Paxika 
+        [1.837849802852823, 42.71983243061919], // Le p'tit Montagnard 
+        [1.8391319201467886, 42.72029746575516], // La Cave 
+        [1.8382843260845672, 42.72002948238567], // La pizzeria d'Ax 
+        [1.8384023723571694, 42.72106994079602], // La Trattoria 
+        [1.839459202165673, 42.72133398011767], // Comptoir JOA 
+        [1.8387564258035372, 42.72087287864777], // Le grand café 
+        [1.8392606622605467, 42.72015558216968], // Chez Mateo Pizzeria 
+        [1.8333406632548939, 42.724080550931106] // Restaurant Le Terminus 
+        ];
+
+        const coordinateCasino = [[1.8402683443920684, 42.721024815699984] // Le casino 
+        ];
+
+        const coordinateSupermarche = [[1.83814736607087, 42.72016768392856], // spar 
+        [1.8379327709204272, 42.71993122436834], // proxi alimentation  
+        [1.8148496547191633, 42.70055019609857], // Sherpa Supermarché Ax 3 Domaines
+        [1.8154664007043164, 42.73076517533793], // Intermarché super 
+        [1.7993952316156723, 42.73302538421326] // Carrefour contact 
+        ];
+
+        const coordinateActivite = [[1.918108720188448, 42.686728227792], // Parc Akrobranch d'orlu
+        [1.915026478249729, 42.68800701095227] // The House of Wolves 
+        ];
+
+        const coordinateSki = [[1.8125270556762132, 42.69957858191174], // Ax 3 domaines
+        [1.799101669480333, 42.68824860901248], // The Old Lift 
+        [1.9554417002900846, 42.735204990817024], // Station de ski d'Ascou
+        [1.8657863589424823, 42.731946950278825] // Ascou Pailhères 
+        ];
+
+        const allCoordinates = [coordinateCure, coordinateRestaurent, coordinateCasino, coordinateSupermarche, coordinateActivite, coordinateSki];
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoibG91aXNiYXIiLCJhIjoiY2xjYWtsMHdtMjRzeDNubW9uNjA0eHM0ayJ9.NBPvtUymMc_qRBdnk7y0tQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-v9',
+            center: [{{ longitude }}, {{ latitude }}], // utilisation des variables latitude et longitude définies dans la vue
+            zoom: 12 // 17
+        });
+
+        // Stations thermales 
+        coordinateCure.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'blue'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+
+        // Reestaurant 
+        coordinateRestaurent.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'yellow'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+
+        // Casino 
+        coordinateCasino.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'green'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+
+        // Supermarché 
+        coordinateSupermarche.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'brown'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+
+        // Activité 
+        coordinateActivite.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'purple'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+        
+        // Stations de ski 
+        coordinateSki.forEach((coordinates) => {
+            new mapboxgl.Marker({color:'white'})
+            .setLngLat(coordinates)
+            .addTo(map);
+        });
+
+        new mapboxgl.Marker({
+            color:'red'
+        })
+        .setLngLat([{{ longitude }}, {{ latitude }}])
+        .addTo(map);
+
+        // Fonction pour ajouter les marqueurs à la carte
+        function addMarkers(coordinates, color) {
+          coordinates.forEach((coordinates) => {
+            new mapboxgl.Marker({color: color})
+              .setLngLat(coordinates)
+              .addTo(map);
+          });
+        }
+
+        // Fonction pour supprimer les marqueurs de la carte
+        function removeMarkers(coordinates) {
+          coordinates.forEach((coordinates) => {
+            map.removeMarker(coordinates);
+          });
+        }
+
+        // permettre la sélection des indicateurs sur la map 
+
+        let markers = [];
+
+        // Gestionnaire d'événement pour le clic sur la liste
+        document.querySelectorAll('.marker-list li').forEach((li) => {
+          li.addEventListener('click', (event) => {
+            const coordinates = event.target.getAttribute('data-coordinates');
+            const color = event.target.getAttribute('data-color');
+            if (event.target.classList.contains('selected')) {
+              // Si l'élément est déjà sélectionné, supprimez les marqueurs
+              removeMarkers(coordinates);
+              event.target.classList.remove('selected');
+            } else {
+              // Si l'élément n'est pas sélectionné, ajoutez les marqueurs
+              addMarkers(coordinates, color);
+              event.target.classList.add('selected');
+            }
+          });
+        });
+
+    </script>
+
+</body>
+
+{% include "location_site/templates/sites/footer.html" %}
+
+</html>
+
+<!-- 
+    bains du coloubrer / cure thermale 
+    source d'eau chaude mais pas sur de pouvoir les affichers 
+    restaurant 
+    casino 
+    intermaché 
+    carfour 
+    accrobranche 
+    loups 
+    fermes du coloubrer (fromage)
+    pas de tuyau du pas de la case 
+    stations de ski 
+    axe 3 domaines (partir de Axe) / Andorre / trouver la dernière station 
+-->

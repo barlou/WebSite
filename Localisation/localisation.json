@@ -1,0 +1,233 @@
+{
+  "points": [
+    {
+      "category": "cure",
+      "locations": [
+        {
+          "coordinates": [1.8392714672747932, 42.72132425619023],
+          "title": "Les bains de Couloubret",
+          "description": "Description des bains de Couloubret : <a href='http://www.bains-couloubret.com/'> site </a>",
+          "image": "image_localisation/couloubret.jpeg"
+        },
+        {
+          "coordinates": [1.839454464256528, 42.72055067584369],
+          "title": "Etablissement thermales",
+          "description": "Description de l'établissement thermale",
+          "image": "chemin/vers/image/etablissement-thermale.jpg"
+        },
+        {
+          "coordinates": [1.8384675381515296, 42.71859067543879],
+          "title": "Thermes du Teich",
+          "description": "Description des thermes du Teich",
+          "image": "chemin/vers/image/thermes-teich.jpg"
+        },
+        {
+          "coordinates": [1.839692008216526, 42.71980301435331],
+          "title": "Bassin des ladres",
+          "description": "Description du bassin des ladres",
+          "image": "chemin/vers/image/bassin-ladres.jpg"
+        },
+        {
+          "coordinates": [1.837275380050441, 42.719510856222584],
+          "title": "Sources chaudes",
+          "description": "Description des sources chaudes",
+          "image": "chemin/vers/image/sources-chaudes.jpg"
+        }
+      ]
+    },
+    {
+      "category": "restaurant",
+      "locations": [
+        {
+          "coordinates": [1.8384281150050716, 42.720082685616],
+          "title": "La petite fringale",
+          "description": "Description de La petite fringale",
+          "image": "chemin/vers/image/petite-fringale.jpg"
+        },
+        {
+          "coordinates": [1.8389451120347091, 42.72017534054251],
+          "title": "Couteaux fourchettes",
+          "description": "Description de Couteaux fourchettes",
+          "image": "chemin/vers/image/couteaux-fourchettes.jpg"
+        },
+        {
+          "coordinates": [1.8379824888911194, 42.71988430184014],
+          "title": "L'aparté",
+          "description": "Description de L'aparté",
+          "image": "chemin/vers/image/laparte.jpg"
+        },
+        {
+          "coordinates": [1.838005373377577, 42.719946721865526],
+          "title": "Le comptoir des négociants",
+          "description": "Description de Le comptoir des négociants",
+          "image": "chemin/vers/image/comptoir-negociants.jpg"
+        },
+        {
+          "coordinates": [1.8393089376493503, 42.72004128818725],
+          "title": "Au canon",
+          "description": "Description de Au canon",
+          "image": "chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates": [1.8385525778778484, 42.72101476279948],
+            "title": "Casa Mauricio",
+            "description": "Description de Casa Mauricio",
+            "image": "chemin/vers/image/casa-mauricio.jpg"
+        },
+        {
+            "coordinates": [1.8381823932494616, 42.71965507617351],
+            "title": "Crêperie l'oiseau bleu ",
+            "description": "Descrition de la Crêperie l'oiseau bleu",
+            "image": "chemin/vers/image/creperie-oiseau-bleu.jpg"
+        },
+        {
+            "coordinates":[1.8384506294330296, 42.72023047791366],
+            "title": "La Paxika",
+            "description": "Description de La Paxika",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.837849802852823, 42.71983243061919], 
+            "title": " Le p'tit Montagnard ",
+            "description": "Description Le p'tit Montagnard",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates": [1.8391319201467886, 42.72029746575516],
+            "title": "La Cave",
+            "description": "Description de La Cave",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.8382843260845672, 42.72002948238567], 
+            "title": "La pizzeria d'Ax",
+            "description": "Description de la pizzeria d'Ax",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.8384023723571694, 42.72106994079602],
+            "title": "La Trattoria",
+            "description": "Description de La Trattoria",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.839459202165673, 42.72133398011767],
+            "title": "Le comptoir JOA",
+            "description": "Description du comptoir JOA",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.8387564258035372, 42.72087287864777],
+            "title": "Le Grand café",
+            "description": "Description du grand café",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.8392606622605467, 42.72015558216968], 
+            "title": "Chez Mateo Pizzeria",
+            "description": "Description de Chez Mateo Pizzeria",
+            "image":"chemin/vers/image/au-canon.jpg"
+        },
+        {
+            "coordinates":[1.8333406632548939, 42.724080550931106],
+            "title": "Restaurant Le Terminus ",
+            "description": "Description du Restaurant Le Terminus ",
+            "image":"chemin/vers/image/au-canon.jpg"
+        }
+      ]
+    },
+    {
+        "category": "casino",
+        "locations": [
+            {
+                "coordinates": [1.8402683443920684, 42.721024815699984],
+                "title": "Casino",
+                "description": "Description du casino",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            }
+        ]
+    },
+    {
+        "category": "SuperMarché",
+        "locations": [
+            {
+                "coordinates": [1.83814736607087, 42.72016768392856],
+                "title": "Spar",
+                "description": "Description du Spar",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            },
+            {
+                "coordinates": [1.8379327709204272, 42.71993122436834], 
+                "title": "Proxi alimentation",
+                "description": "Description de Proxi alimentation  ",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            },
+            {
+                "coordinates": [1.8148496547191633, 42.70055019609857], 
+                "title": "Sherpa Supermarché Ax 3 Domaines",
+                "description": "Description de Sherpa Supermarché Ax 3 Domaines",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            },
+            {
+                "coordinates": [1.8154664007043164, 42.73076517533793],
+                "title": "Intermarché super",
+                "description": "Description d'Intermarché super",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            },
+            {
+                "coordinates": [1.7993952316156723, 42.73302538421326],  
+                "title": "Carrefour contact ",
+                "description": "Description de Carrefour contact ",
+                "image": "chemin/vers/image/petite-fringale.jpg"
+            }
+        ]
+    },
+    {
+        "category": "activite",
+        "locations": [
+            {
+                "coordinates": [1.918108720188448, 42.686728227792],
+                "title": "Parc Akrobranch d'orlu",
+                "description": "Description du Parc Akrobranch d'orlu",
+                "image": "chemin/vers/image/au-canon.jpg"
+            },
+            {
+                "coordinates": [1.915026478249729, 42.68800701095227],
+                "title": "La maison des Loups",
+                "description": "Description de la maison des Loups",
+                "image": "chemin/vers/image/au-canon.jpg"
+            }
+        ]
+    },
+    {
+        "category": "station-ski",
+        "locations": [
+            {
+                "coordinates": [1.8125270556762132, 42.69957858191174],
+                "title": "Station de ski Ax 3 Domaines",
+                "description": "Description de la Station de ski Ax 3 Domaines",
+                "image": "chemin/vers/image/au-canon.jpg"
+            },
+            {
+                "coordinates": [1.799101669480333, 42.68824860901248],
+                "title": "Station de ski The old lift",
+                "description": "Description de la Station de ski The old lift",
+                "image": "chemin/vers/image/au-canon.jpg"
+            },
+            {
+                "coordinates": [1.9554417002900846, 42.735204990817024],
+                "title": "Station de ski d'Ascou",
+                "description": "Description de la Station de ski d'Ascou",
+                "image": "chemin/vers/image/au-canon.jpg"
+            },
+            {
+                "coordinates": [1.9554417002900846, 42.735204990817024],
+                "title": "Station de ski d'Ascou",
+                "description": "Description de la Station de ski d'Ascou",
+                "image": "chemin/vers/image/au-canon.jpg"
+            }
+        ]
+    }
+  ]
+}
+          
