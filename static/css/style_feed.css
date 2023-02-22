@@ -1,0 +1,174 @@
+html, body {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index {
+    background-color: rgba(184, 184, 184, 0.5);
+}
+
+.title {
+    display:flex;
+    justify-content: center;
+    text-align:center;
+}
+
+.introduction {
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    border : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display:inline-block;
+    justify-content: center;
+    margin-left:10%;
+    margin-right:10%;
+
+}
+
+.contain {
+    display: flex;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.redirect {
+    display: flex;
+    justify-content: justify;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.indicateur {
+    display: flex;
+}
+
+.indicateur_sentence {
+    margin-left:5%;
+}
+
+.button_switch {
+    display:flex;
+    justify-content: flex-end;
+    margin-left:35%;
+}
+
+.prev-page {
+    margin-right:5%;
+    margin-left:15%;
+}
+.next-page {
+    margin-left:5%;
+}
+
+.pres_loc {
+    height: 50px;
+    width: 75px;
+    border : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    margin-left:5%;
+    display: flex;
+    justify-content: center;
+}
+
+.pres_loc2 {
+    height: 30px;
+    width: 75px;
+    border : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    margin-left:5%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .slide {
+    display: none; /* Masquez toutes les images */
+}
+
+.slider .slide:first-child {
+    display: block; /* Affichez la première image */
+}
+
+.slider_page .slide_page {
+    display: none; /* Masquez toutes les images */
+}
+
+.slider_page .slide_page:first-child {
+    display: block; /* Affichez la première image */
+}
+
+.prev-page .next-page {
+    padding: 10px 20px;
+    cursor: pointer;
+    outline:none;
+    border-radius: 5px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    border : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.presentation {
+    background-color: white;
+    border-radius: 30px;
+}
+
+table {
+    text-align: center;
+    background-color: red;
+}
+
+.cuisine {
+    display:flex;
+    justify-content: center;
+    margin-right: 7%;
+}
+
+.pres-cuisine {
+    display:inline-block;
+    width:40%;
+}
+
+.infos {
+    margin-right:2%;
+    display: flex;
+    text-align: justify;
+}
+
+.infos2 {
+    margin-left:10%;
+    display: flex;
+    text-align: justify;
+}
+
+.image {
+    margin-left:20%;
+    border-radius:20px 20px 20px 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+
+
+.image2 {
+    margin-right:20%;
+    border-radius:20px 20px 20px 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+
+/* Faire un text2 et un image2 pour pouvoir switcher plus facilement entre les deux et pouvoir inverser
+image et text au fur et à mesure qu'on descend 
+*/
