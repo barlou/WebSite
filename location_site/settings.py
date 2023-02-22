@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Ajout du chemin permettant d'accéder à la librairie gdal 
-os.environ['GDAL_LIBRARY_PATH'] = '/usr/local/Cellar/gdal/3.6.1/lib'
+os.environ['GDAL_LIBRARY_PATH'] = '/home/ubuntu/miniconda3/pkgs/gdal-3.6.0-py39hf9a8271_0/lib'
 
 # Email configuration 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
