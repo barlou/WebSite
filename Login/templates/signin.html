@@ -1,0 +1,61 @@
+{% load bootstrap3 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% bootstrap_messages %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Inscription </title>
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Louis 0.107.18">
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+
+
+</head>
+
+{% include "location_site/templates/sites/navbar.html" %}
+
+
+<body class="page">
+
+{% block content %}
+
+<div class="liste">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                 <form method="post" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                     <button class="btn button" type="submit", text-align="center">
+                         S'inscrire
+                     </button>
+                     {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+</body>
+
+{% include "location_site/templates/sites/footer.html" %}
+
+
