@@ -165,6 +165,17 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 
+AWS_ACCESS_KEY_ID = 'AKIA2VQFQTMXFCFJUPCM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'locationpetchesInfo'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+STATIC_LOCATION = 'static'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
