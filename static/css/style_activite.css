@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index {
+    background-color: rgba(184, 184, 184, 0.5);
+}
+
+.Activity {
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    border : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin-left : 8%;
+    margin-right: 8%;
+    height : 650px;
+    width : 1200px;
+    display:flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.contain {
+    display: flex;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.redirect {
+    display: flex;
+    justify-content: justify;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.image {
+    display:flex;
+    justify-content:center;
+}
+
+.img {
+    display:inline-block;
+    margin-right:2%;
+    height:200px;
+}
+
+.footer-div {
+   display: flex;
+   margin-right : 2%;
+   margin-left : 2%;
+}
+
+.slider_page {
+    height: 625px;
+    width : 1200px;
+}
+
+.slider_page .slide_page {
+    display: none; /* Masquez toutes les images */
+}
+
+.slider_page .slide_page:first-child {
+    display: block; /* Affichez la première image */
+}
+  
+.info {
+    margin-right : 55%;
+    margin-left : 7%;
+} 
+
+.button_switch {
+    display:flex;
+    justify-content: flex-end;
+    margin-right : 4%;
+}
