@@ -1,0 +1,14 @@
+<div class="location-comments">
+  {% for comment in comments_location %}
+    <div class="comment">
+      <p> Publié par : <b> {{comment.user}} </b> le <i> {{comment.date_added|date:"d/m/y"}} </i> <h6 >{{comment.rating}}&#9733;</h6> </p>
+    </div>
+    <div class="text">
+      <p> {{comment.text}} </p>
+    </div>
+    <hr width='50%'>
+  {% empty %}
+    <p> Aucun commentaire pour le moment. </p>
+    <hr width='50%'>
+  {% endfor %}
+</div>
