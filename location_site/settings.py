@@ -30,12 +30,14 @@ SECRET_KEY = 'django-insecure-=l6=48r9dr!j)rpd6s^@!h2w2v4la4k*-i5=r1%c6id+3qgk^n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['35.180.29.138']
+ALLOWED_HOSTS = ['35.180.29.138', 
+                 '127.0.0.1']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Ajout du chemin permettant d'accéder à la librairie gdal 
 os.environ['GDAL_LIBRARY_PATH'] = '/home/ubuntu/miniconda3/pkgs/gdal-3.6.0-py39hf9a8271_0/lib'
+# '/usr/local/Cellar/gdal/3.6.1/lib'
 
 # Email configuration 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
