@@ -1,4 +1,4 @@
 from django.shortcuts import render 
 
 def activite(request):
-    return render(request, "Activite/templates/activite.html") 
+    return render(request, "Activite/templates/Activite.html") 
