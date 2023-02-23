@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Mon site web </title>
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
+</head>
+
+{% include "location_site/templates/sites/navbar.html" %}
+
+<body class="index">
+    <div class="cadre">
+        <div class="frame">
+            <img src="{% static 'Photos/P1040582.JPG' %}" alt="Image 1" class="image_accueil">
+          </div>
+    </div>
+
+    <div class="bottom-image">
+        <div class="title">
+            <h3> Bienvenue à Petch, la destination idéale pour vos vacances en montagne ! </h3>
+        </div>
+        <div class="container">
+            <a href="{% url 'feed:feed-home' %}"><input type="button" value="Entrer" class="button-73"></a>
+        </div>
+    </div>
+
+
+    
+
+</body>
+
+{% include "location_site/templates/sites/footer.html" %}
+
+</html>
+
